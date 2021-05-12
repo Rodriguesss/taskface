@@ -1,17 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <component :is="componente" :name="name" @changedPageInitial="changeComponent" @changedIntro="changeIntro"></component>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import InputInitial from './components/InputInitial.vue'
+import PageInit from '@/components/PageInit.vue'
+import Intro from '@/components/Intro.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    InputInitial, PageInit, Intro
+  },
+  data() {
+    return {
+      componente: 'Intro',
+      name: ''
+    }
+  },
+  methods: {
+    changeComponent(name) {
+      this.componente = 'PageInit'    
+      this.name = name
+    },
+    changeIntro() {
+      setTimeout(() =>  {
+        this.componente = 'InputInitial'
+      }, 1000)
+    }
   }
 }
 </script>
@@ -25,4 +43,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+body {
+	line-height: 1;
+}
+
 </style>
