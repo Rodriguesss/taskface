@@ -38,10 +38,12 @@ export default {
   },
   methods: {
     init() {
-      this.show = !this.show;
-      setTimeout(() => {
-        this.$emit('changedPageInitial', this.name)
-      }, 700);
+      if(this.name.trim() != "") {
+        this.show = !this.show;
+        setTimeout(() => {
+          this.$emit('changedPageInitial', this.name)
+        }, 700);
+      }
     },
   },
 };

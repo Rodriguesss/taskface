@@ -35,6 +35,13 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+.initial {
+  font-family: 'Yellowtail', cursive;
+  font-size: 2.5em;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

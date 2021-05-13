@@ -1,9 +1,17 @@
 <template>
-  <div class="initial">Bem vindo {{ name }}</div>
+  <div class="initial">
+    <span><div>Bem vindo {{ name }}</div></span>
+    <CardList />
+  </div>
+
 </template>
 
 <script>
+import CardList from "@/components/CardList.vue";
 export default {
+  components: {
+    CardList
+  },
   props: {
     name: String,
   },
@@ -11,12 +19,5 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
-
-.initial {
-  font-family: 'Yellowtail', cursive;
-  font-size: 2.5em;
-}
-
 
 </style>
